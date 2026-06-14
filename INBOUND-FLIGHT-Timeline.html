@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -9,22 +8,178 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root,[data-theme="light"]{--bg:#f7f6f2;--surface:#fff;--surface-2:#f3f4f6;--border:#d4d1ca;--text:#1f2937;--muted:#6b7280;--primary:#01696f;--primary-2:#0c4e54;--accent:#e6fffb;--shadow:0 10px 30px rgba(0,0,0,.08)}
-    [data-theme="dark"]{--bg:#171614;--surface:#1c1b19;--surface-2:#23211f;--border:#393836;--text:#e5e7eb;--muted:#a1a1aa;--primary:#4f98a3;--primary-2:#76b7c1;--accent:#223638;--shadow:0 10px 30px rgba(0,0,0,.35)}
-    *{box-sizing:border-box} body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
-    .wrap{max-width:1080px;margin:0 auto;padding:20px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
-    .brand{display:flex;align-items:center;gap:14px}.logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-2));display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:var(--shadow)}
-    h1{margin:0;font-size:clamp(1.7rem,2.8vw,2.4rem)}.lead{margin:6px 0 0;color:var(--muted);max-width:68ch}.theme-btn,.btn{min-height:44px;border-radius:12px;font:inherit}
-    .theme-btn{padding:10px 14px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer}
-    .grid{display:grid;grid-template-columns:320px 1fr;gap:20px}.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    h2{margin:0 0 14px;font-size:1.05rem}.field{margin-bottom:14px}label{display:block;font-size:.92rem;font-weight:600;margin-bottom:7px}
-    input,select{width:100%;min-height:46px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);font:inherit}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}.btn{padding:11px 16px;border:none;cursor:pointer;font-weight:600}.btn-primary{background:var(--primary);color:#fff}.btn-secondary{background:var(--surface-2);color:var(--text);border:1px solid var(--border)}
-    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 18px}.summary.all{grid-template-columns:repeat(2,1fr)}
-    .pill{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:14px}.k{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.v{font-size:1.15rem;font-weight:700;margin-top:4px}
-    table{width:100%;border-collapse:collapse}th,td{padding:12px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}th{background:var(--surface-2);font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}tr.highlight td{background:var(--accent)}
-    .note,.small{color:var(--muted);font-size:.92rem}.help{margin-top:16px;padding:14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border)}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.summary,.summary.all{grid-template-columns:1fr}}
+    :root,[data-theme="light"]{
+      --bg:#f7f6f2;
+      --surface:#fff;
+      --surface-2:#f3f4f6;
+      --border:#d4d1ca;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --primary:#01696f;
+      --primary-2:#0c4e54;
+      --accent:#e6fffb;
+      --shadow:0 10px 30px rgba(0,0,0,.08)
+    }
+    [data-theme="dark"]{
+      --bg:#171614;
+      --surface:#1c1b19;
+      --surface-2:#23211f;
+      --border:#393836;
+      --text:#e5e7eb;
+      --muted:#a1a1aa;
+      --primary:#4f98a3;
+      --primary-2:#76b7c1;
+      --accent:#223638;
+      --shadow:0 10px 30px rgba(0,0,0,.35)
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5
+    }
+    .wrap{max-width:1080px;margin:0 auto;padding:20px}
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:20px
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:800;
+      box-shadow:var(--shadow)
+    }
+    h1{margin:0;font-size:clamp(1.7rem,2.8vw,2.4rem)}
+    .lead{margin:6px 0 0;color:var(--muted);max-width:68ch}
+    .theme-btn,.btn{min-height:44px;border-radius:12px;font:inherit}
+    .theme-btn{
+      padding:10px 14px;
+      border:1px solid var(--border);
+      background:var(--surface);
+      color:var(--text);
+      cursor:pointer
+    }
+    .grid{display:grid;grid-template-columns:320px 1fr;gap:20px}
+    .card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:var(--shadow)
+    }
+    h2{margin:0 0 14px;font-size:1.05rem}
+    .field{margin-bottom:14px}
+    label{display:block;font-size:.92rem;font-weight:600;margin-bottom:7px}
+    input,select{
+      width:100%;
+      min-height:46px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:var(--surface-2);
+      color:var(--text);
+      font:inherit
+    }
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+    .btn{
+      padding:11px 16px;
+      border:none;
+      cursor:pointer;
+      font-weight:600
+    }
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-secondary{
+      background:var(--surface-2);
+      color:var(--text);
+      border:1px solid var(--border)
+    }
+    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
+    .summary.all{grid-template-columns:repeat(3,1fr)}
+    .pill{
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:10px 12px
+    }
+    .k{
+      font-size:.72rem;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.06em
+    }
+    .v{
+      font-size:1rem;
+      font-weight:700;
+      margin-top:3px
+    }
+    table{width:100%;border-collapse:collapse}
+    th,td{
+      padding:12px 10px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+      vertical-align:top
+    }
+    th{
+      background:var(--surface-2);
+      font-size:.85rem;
+      text-transform:uppercase;
+      letter-spacing:.04em
+    }
+    tr.highlight td{background:var(--accent)}
+    .note,.small{color:var(--muted);font-size:.92rem}
+    .help{
+      margin-top:16px;
+      padding:14px;
+      border-radius:12px;
+      background:var(--surface-2);
+      border:1px solid var(--border)
+    }
+    .actual-wrap{margin-top:8px}
+    .actual-label{
+      display:block;
+      font-size:.82rem;
+      color:var(--muted);
+      margin-bottom:6px;
+      font-weight:600
+    }
+    .actual-input{
+      min-height:40px;
+      padding:8px 10px
+    }
+    .save-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px
+    }
+    .status{
+      margin-top:12px;
+      padding:10px 12px;
+      border-radius:10px;
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:.92rem
+    }
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .summary,.summary.all{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){
+      .summary,.summary.all{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -34,7 +189,7 @@
         <div class="logo" aria-hidden="true">PTS</div>
         <div>
           <h1>INBOUND FLIGHT Timeline</h1>
-          <p class="lead">Enter STD and the calculator fills in the inbound milestone times automatically.</p>
+          <p class="lead">Enter STD and the calculator fills in the inbound milestone times automatically. Add actual times, then save them to this browser.</p>
         </div>
       </div>
       <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">Dark mode</button>
@@ -43,10 +198,12 @@
     <div class="grid">
       <section class="card">
         <h2>Flight inputs</h2>
+
         <div class="field">
           <label for="stdTime">STD</label>
           <input id="stdTime" type="time" value="14:30" />
         </div>
+
         <div class="field">
           <label for="profile">Boarding profile</label>
           <select id="profile">
@@ -55,10 +212,11 @@
             <option value="widebody">Widebody</option>
           </select>
         </div>
+
         <div class="actions">
-          <button class="btn btn-primary" id="calcBtn" type="button">Recalculate</button>
-          <button class="btn btn-secondary" id="resetBtn" type="button">Reset</button>
+          <button class="btn btn-secondary" id="clearSavedBtn" type="button">Remove saved data</button>
         </div>
+
         <div class="help">
           <div><strong>Boarding rule:</strong> USA and A321 use passenger boarding at STD-40, while widebody uses STD-35.</div>
           <div class="small" style="margin-top:8px;">Security check remains at STD-47, with your note that it is recommended 10 minutes before boarding time.</div>
@@ -68,45 +226,107 @@
       <section class="card">
         <h2>Calculated timeline</h2>
         <div class="summary all" id="summaryCards"></div>
+
         <table>
           <thead>
             <tr>
               <th>Milestone</th>
-              <th>Time</th>
-              <th>Notes</th>
+              <th>Calculated</th>
+              <th>Notes / Actual time</th>
             </tr>
           </thead>
           <tbody id="timelineBody"></tbody>
         </table>
+
         <p class="note" style="margin-top:14px;">The STD offset column is hidden, but all milestone calculations still run in the background.</p>
+
+        <div class="save-row">
+          <button class="btn btn-primary" id="saveBtn" type="button">Save all</button>
+        </div>
+
+        <div class="status" id="saveStatus">Enter actual times, then click Save all to keep them in this browser.</div>
       </section>
     </div>
   </div>
 
   <script>
     const themeToggle = document.getElementById('themeToggle');
-    let dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    function applyTheme(){document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');themeToggle.textContent = dark ? 'Light mode' : 'Dark mode';}
-    applyTheme();
-    themeToggle.addEventListener('click',()=>{dark=!dark;applyTheme();});
+    const saveBtn = document.getElementById('saveBtn');
+    const clearSavedBtn = document.getElementById('clearSavedBtn');
+    const saveStatus = document.getElementById('saveStatus');
+    const stdInput = document.getElementById('stdTime');
+    const profileInput = document.getElementById('profile');
+
+    const STORAGE_KEY = 'inboundTimelineSavedState';
+    const DEFAULT_STATE = {
+      stdTime: '14:30',
+      profile: 'usa',
+      actualTimes: {}
+    };
 
     const milestones = [
-      { key:'dutystart', short:'duty start', name:'duty start', offset:60, note:'STD-60.' },
+      { key:'dutystart', short:'Duty start', name:'Duty start', offset:60, note:'STD-60.' },
       { key:'onboard', short:'1st crew onboard', name:'1st crew onboard', offset:60, note:'STD-60.' },
       { key:'security', short:'Security', name:'Security check', offset:47, note:'STD-47; recommended 10 minutes before boarding time.' },
       { key:'boarding', short:'Boarding', name:'Passenger boarding', offset:(profile)=> (profile === 'usa' || profile === 'a321') ? 40 : 35, note:'USA and A321 use STD-40; widebody uses STD-35.' },
       { key:'door', short:'Door close', name:'Last door close', offset:6, note:'STD-6.' }
     ];
 
-    function toMinutes(hhmm){const [h,m]=hhmm.split(':').map(Number);return h*60+m;}
-    function fmt(mins){const total=((mins%1440)+1440)%1440;const h=String(Math.floor(total/60)).padStart(2,'0');const m=String(total%60).padStart(2,'0');return `${h}:${m}`;}
+    let dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    function recalc(){
-      const std = document.getElementById('stdTime').value || '14:30';
-      const profile = document.getElementById('profile').value;
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      themeToggle.textContent = dark ? 'Light mode' : 'Dark mode';
+    }
+
+    function setStatus(message) {
+      saveStatus.textContent = message;
+    }
+
+    function toMinutes(hhmm) {
+      const [h, m] = hhmm.split(':').map(Number);
+      return h * 60 + m;
+    }
+
+    function fmt(mins) {
+      const total = ((mins % 1440) + 1440) % 1440;
+      const h = String(Math.floor(total / 60)).padStart(2, '0');
+      const m = String(total % 60).padStart(2, '0');
+      return `${h}:${m}`;
+    }
+
+    function getSavedState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function applyState(state) {
+      const next = state || DEFAULT_STATE;
+      stdInput.value = next.stdTime || DEFAULT_STATE.stdTime;
+      profileInput.value = next.profile || DEFAULT_STATE.profile;
+    }
+
+    function getActualTimesFromPage() {
+      const actualTimes = {};
+      document.querySelectorAll('[data-actual-key]').forEach((input) => {
+        actualTimes[input.dataset.actualKey] = input.value || '';
+      });
+      return actualTimes;
+    }
+
+    function recalc(actualTimes = null) {
+      const std = stdInput.value || DEFAULT_STATE.stdTime;
+      const profile = profileInput.value || DEFAULT_STATE.profile;
       const base = toMinutes(std);
       const tbody = document.getElementById('timelineBody');
       const summary = document.getElementById('summaryCards');
+      const actualMap = actualTimes || getActualTimesFromPage();
+
       tbody.innerHTML = '';
       summary.innerHTML = '';
 
@@ -115,26 +335,93 @@
       stdCard.innerHTML = `<div class="k">STD</div><div class="v">${std}</div>`;
       summary.appendChild(stdCard);
 
-      milestones.forEach(item=>{
-        const tr = document.createElement('tr');
-        if(item.key === 'boarding' || item.key === 'door') tr.classList.add('highlight');
+      milestones.forEach((item) => {
         const offset = typeof item.offset === 'function' ? item.offset(profile) : item.offset;
         const time = fmt(base - offset);
-        tr.innerHTML = `<td>${item.name}</td><td><strong>${time}</strong></td><td>${item.note}</td>`;
-        tbody.appendChild(tr);
 
         const card = document.createElement('div');
         card.className = 'pill';
         card.innerHTML = `<div class="k">${item.short}</div><div class="v">${time}</div>`;
         summary.appendChild(card);
+
+        const tr = document.createElement('tr');
+        if (item.key === 'boarding' || item.key === 'door') tr.classList.add('highlight');
+
+        const savedActual = actualMap[item.key] || '';
+
+        tr.innerHTML = `
+          <td>${item.name}</td>
+          <td><strong>${time}</strong></td>
+          <td>
+            <div>${item.note}</div>
+            <div class="actual-wrap">
+              <label class="actual-label" for="actual-${item.key}">Actual time</label>
+              <input
+                class="actual-input"
+                id="actual-${item.key}"
+                data-actual-key="${item.key}"
+                type="time"
+                value="${savedActual}"
+              />
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
       });
     }
 
-    document.getElementById('calcBtn').addEventListener('click', recalc);
-    document.getElementById('resetBtn').addEventListener('click', ()=>{document.getElementById('stdTime').value='14:30';document.getElementById('profile').value='usa';recalc();});
-    document.getElementById('stdTime').addEventListener('input', recalc);
-    document.getElementById('profile').addEventListener('change', recalc);
-    recalc();
+    function saveAll() {
+      const state = {
+        stdTime: stdInput.value || DEFAULT_STATE.stdTime,
+        profile: profileInput.value || DEFAULT_STATE.profile,
+        actualTimes: getActualTimesFromPage()
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      setStatus('Saved to this browser on this device.');
+    }
+
+    function clearSavedData() {
+      localStorage.removeItem(STORAGE_KEY);
+      applyState(DEFAULT_STATE);
+      recalc(DEFAULT_STATE.actualTimes);
+      setStatus('Saved data removed from this browser.');
+    }
+
+    applyTheme();
+    themeToggle.addEventListener('click', () => {
+      dark = !dark;
+      applyTheme();
+    });
+
+    stdInput.addEventListener('input', () => {
+      recalc();
+      setStatus('Unsaved changes. Click Save all to keep them in this browser.');
+    });
+
+    profileInput.addEventListener('change', () => {
+      recalc();
+      setStatus('Unsaved changes. Click Save all to keep them in this browser.');
+    });
+
+    document.addEventListener('input', (event) => {
+      if (event.target.matches('[data-actual-key]')) {
+        setStatus('Unsaved changes. Click Save all to keep them in this browser.');
+      }
+    });
+
+    saveBtn.addEventListener('click', saveAll);
+    clearSavedBtn.addEventListener('click', clearSavedData);
+
+    const savedState = getSavedState();
+    if (savedState) {
+      applyState(savedState);
+      recalc(savedState.actualTimes || {});
+      setStatus('Saved data loaded from this browser.');
+    } else {
+      applyState(DEFAULT_STATE);
+      recalc(DEFAULT_STATE.actualTimes);
+      setStatus('Enter actual times, then click Save all to keep them in this browser.');
+    }
   </script>
 </body>
 </html>

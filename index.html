@@ -64,15 +64,15 @@
     }
 
     .logo {
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      display: block;
       border-radius: 14px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      color: white;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
+      background: var(--surface);
+      padding: 6px;
       box-shadow: var(--shadow);
+      flex-shrink: 0;
     }
 
     h1 {
@@ -164,10 +164,10 @@
   <div class="wrap">
     <div class="topbar">
       <div class="brand">
-        <div class="logo" aria-hidden="true">PTS</div>
+        <img class="logo" src="Shark_Fin_Logo.png" alt="Green Shark Fin logo" />
         <div>
           <h1>Flight Timeline Tools</h1>
-          <p class="lead">Open either calculator below. Both tools run directly in the browser, so they can be hosted as simple static HTML pages.</p>
+          <p class="lead">Open either calculator below.</p>
         </div>
       </div>
 
