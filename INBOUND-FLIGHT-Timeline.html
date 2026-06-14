@@ -91,9 +91,8 @@
     themeToggle.addEventListener('click',()=>{dark=!dark;applyTheme();});
 
     const milestones = [
-      { key:'briefing', short:'Briefing', name:'Briefing', offset:85, note:'STD-85.' },
-      { key:'bus', short:'Crew bus', name:'Board crew bus - sign out from CXC', offset:70, note:'STD-70.' },
-      { key:'onboard', short:'1st onboard', name:'1st crew onboard', offset:55, note:'STD-55.' },
+      { key:'dutystart', short:'duty start', name:'duty start', offset:60, note:'STD-60.' },
+      { key:'onboard', short:'1st crew onboard', name:'1st crew onboard', offset:60, note:'STD-60.' },
       { key:'security', short:'Security', name:'Security check', offset:47, note:'STD-47; recommended 10 minutes before boarding time.' },
       { key:'boarding', short:'Boarding', name:'Passenger boarding', offset:(profile)=> (profile === 'usa' || profile === 'a321') ? 40 : 35, note:'USA and A321 use STD-40; widebody uses STD-35.' },
       { key:'door', short:'Door close', name:'Last door close', offset:6, note:'STD-6.' }
